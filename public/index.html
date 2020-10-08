@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>P5 Chat</title>
+    <!-- This is a standard p5.js index, NOTE the p5.dom.min.js -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.10.2/addons/p5.sound.min.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+</head>
+
+<body>
+
+    <div id="canvas-container">
+        <!-- the lobby element is displayed before the canvas is loaded -->
+        <div id="lobby-container">
+            <div class="content-center">
+                <p>
+                    <h1>What's your name?</h1>
+                </p>
+                <form id="lobby-form" action="" onsubmit="return nameOk()">
+                    <input id="lobby-field" placeholder="username" maxlength="8" autocomplete="off" />
+                    <p>
+                        <button class="lobby-button" type="button" onclick="nameOk();">CONTINUE</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- the avatar selection is a DOM overlay on the canvas -->
+        <div id="avatar-container" style="display:none;">
+            <div class="content-center">
+                <p>
+                    <h1>Is this your body?</h1>
+                </p>
+                <div id="avatar-spacer"></div>
+                <p>
+                    <form id="avatar-form" action="" onsubmit="return bodyOk()"></form>
+                    <button class="lobby-button" type="button" onclick="randomAvatar();">No?</button>
+                    <button class="lobby-button" type="button" onclick="bodyOk();">Yes?</button>
+                    </form>
+                </p>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- talk form is below canvas getTalkInput is what happens when return is pressed-->
+    <form id="talk-form" action="" onsubmit="return getTalkInput()" style="display:none;">
+        <input class="talk-field" id="chatField" autocomplete="off" />
+        <!-- call the function below on button press-->
+        <button class="talk-button" type="button" onclick="getTalkInput();">TALK</button>
+    </form>
+
+
+    <!--
+    <form id="user-form" action="" onsubmit="return getInputValue()">
+        <h1>Welcome</h1>
+
+        <input type="text" placeholder="username" maxlength="8" id="user-field" autocomplete="off" />
+
+        <div class="avatar">
+        </div>
+
+        <button type="button" class="btn" name="join" id="join">JOIN</button>
+        </div>
+    </form>
+    -->
+
+</body>
+
+</html>

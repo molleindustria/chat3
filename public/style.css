@@ -1,0 +1,103 @@
+
+html, body {
+  margin: 0px;
+  padding: 0px;
+}
+
+
+#canvas-container {
+    width: 800px;
+    height: 600px;
+     margin: auto;
+}
+
+canvas {
+  display: block;
+  /*prevents double click selection*/
+  -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+body {  font: Helvetica, Arial; }
+
+#talk-form { 
+    display: block; 
+    background: #000; 
+    width: 800px;
+    padding:0;
+    margin:auto;
+}
+
+.talk-field { 
+    display: inline-block;
+    border: none;
+    font-size: 20px;
+    border: #000;
+    padding: 4px; 
+    margin:4px;
+    width: 670px; 
+    outline: none;
+    }
+
+.talk-button, .lobby-button { 
+    display: inline-block;
+    border: none; 
+    margin:0px; 
+    padding:4px;
+    text-align: center; 
+    font-size: 20px; 
+    background: rgb(130, 224, 255); 
+    
+}
+
+.talk-button {
+width:100px;
+}
+
+.talk-button:hover, .lobby-button:hover { background:rgb(151, 245, 154)}
+
+/* username */
+#lobby-container, #avatar-container {
+    width: 800px;
+    height: 600px;
+    background-color: #00000020;
+    display: block;
+    position: absolute;
+}
+
+#avatar-container {
+    background:none;
+}
+
+/* center on container */
+.content-center {
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    text-align: center;
+}
+
+#lobby-field {
+    border: none;
+    background: #baa8a8; 
+    font-size: 40px;
+    text-align: center;
+    width: 200px;
+    outline: none;
+}
+
+#avatar-container .lobby-button {
+    margin-right: 40px;
+    margin-left: 40px;
+    
+}
+
+#avatar-spacer {
+    display: block;
+    height:200px;
+}
